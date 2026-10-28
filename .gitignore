@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Virtual environments and local IDE settings
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated training outputs
+cv_results_tro.csv
+lr_tro_final_results.png
