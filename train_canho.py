@@ -37,7 +37,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import (FunctionTransformer, OneHotEncoder,
                                    OrdinalEncoder, StandardScaler)
 
-CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else "rental_room_rows1.csv"
+CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else "rental_room_rows.csv"
 RANDOM_STATE = 42
 MODEL_PATH = "rental_price_model_canho_hgb.pkl"
 META_PATH = "model_metadata_canho_hgb.json"
