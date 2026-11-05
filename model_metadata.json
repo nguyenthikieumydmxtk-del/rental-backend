@@ -1,30 +1,28 @@
 {
-  "model": "Ridge",
+  "model": "Lasso",
   "best_params": {
-    "alpha": 56.23413251903491
+    "alpha": 0.00206913808111479
   },
-  "cv_r2_log": 0.47094183198418177,
-  "nested_cv_r2_log": 0.4832261496045148,
+  "cv_r2_log": 0.4640477918206766,
+  "nested_cv_r2_log": 0.4780488524950301,
   "holdout_test": {
-    "r2_log": 0.5123543242547854,
-    "mae_vnd": 713851.9055408357,
-    "median_ape": 0.18412497583310033,
-    "mape": 0.2377965970915368,
-    "within20": 0.53125
+    "r2_log": 0.535421936208385,
+    "mae_vnd": 767622.6389257245,
+    "median_ape": 0.18276097563718044,
+    "mape": 0.22917218344223755,
+    "within20": 0.5427350427350427
   },
-  "n_train_rows": 1119,
+  "n_train_rows": 1166,
   "input_columns": [
     "size_m2",
     "dist_to_cbd",
     "dist_to_beach",
-    "dist_to_nearest_uni",
     "has_balcony",
     "has_elevator",
     "has_window",
     "furnishing_status",
     "ward_name",
-    "nearest_beach_code",
-    "nearest_uni_code"
+    "nearest_beach_code"
   ],
   "furnishing_values": [
     "Không nội thất",
@@ -48,9 +46,7 @@
   ],
   "nearest_beach_code_values": [
     "BacMyAn",
-    "BaiBac",
     "BaiBut_BaiRang",
-    "LangVan",
     "MyKhe",
     "NamO",
     "NonNuoc",

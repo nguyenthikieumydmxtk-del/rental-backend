@@ -45,7 +45,7 @@ n_tro = len(df)
 
 # posted_date có 2 định dạng -> format="mixed" để không bị NaT
 df["posted_date"] = pd.to_datetime(df["posted_date"], format="mixed")
-df = df[df["posted_date"].dt.year.isin([2025,2026])].copy()
+df = df[df["posted_date"].dt.year.isin([2025, 2026])].copy()
 n_year = len(df)
 df = df[df["ward_name"] != "Hải Vân"]
 
@@ -64,14 +64,15 @@ df["log_price"] = np.log(df["price_vnd"])
 def iqr_mask(s: pd.Series, k: float = 1.5) -> pd.Series:
     q1, q3 = s.quantile([0.25, 0.75])
     iqr = q3 - q1
-    return s.between(q1 - k * iqr, q3 + 1 * iqr)
+    return s.between(q1 - k * iqr, q3 + k * iqr)
 
 
-df = df[iqr_mask(df["log_price"]) & iqr_mask(df["size_m2"])].reset_index(drop=True)
+df = df[iqr_mask(df["log_price"]) & iqr_mask(df["size_m2"]) & iqr_mask(df["dist_to_nearest_uni"])].reset_index(drop=True)
 print(f"Phòng trọ: {n_tro} -> năm 2025-2026: {n_year} -> bỏ trùng {n_dedup} "
       f"-> bỏ outlier IQR {len(df)}")
 print(f"Giá còn lại: {df.price_vnd.min():,.0f} - {df.price_vnd.max():,.0f} VND | "
-      f"Diện tích: {df.size_m2.min():.0f} - {df.size_m2.max():.0f} m2")
+      f"Diện tích: {df.size_m2.min():.0f} - {df.size_m2.max():.0f} m2 | "
+      f"Khoảng cách đến trường đại học: {df.dist_to_nearest_uni.min():.0f} - {df.dist_to_nearest_uni.max():.0f} | ")
 
 # ----------------------------------------------------------------------------
 # 2. PIPELINE TIỀN XỬ LÝ (nhận DỮ LIỆU THÔ -> file PKL dùng trực tiếp được)
@@ -83,10 +84,10 @@ print(f"Giá còn lại: {df.price_vnd.min():,.0f} - {df.price_vnd.max():,.0f} V
 # ----------------------------------------------------------------------------
 FURN_ORDER = ["Không nội thất", "Nội thất cơ bản", "Đầy đủ nội thất", "Nội thất cao cấp"]
 LOG_COLS = ["size_m2"]
-NUM_COLS = ["dist_to_cbd", "dist_to_beach", "dist_to_nearest_uni",
+NUM_COLS = ["dist_to_cbd", "dist_to_beach",
             "has_balcony", "has_elevator", "has_window"]
 FURN_COL = ["furnishing_status"]
-CAT_COLS = ["ward_name", "nearest_beach_code", "nearest_uni_code"]
+CAT_COLS = ["ward_name", "nearest_beach_code"]
 # Các bãi biển Đà Nẵng và lân cận dùng để tính khoảng cách tới bãi gần nhất.
 # BEACHES = {
 #     # Quanh bán đảo Sơn Trà
