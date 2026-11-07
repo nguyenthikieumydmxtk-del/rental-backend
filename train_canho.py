@@ -60,7 +60,9 @@ df = pd.read_csv(CSV_PATH)
 
 df = df[df["category_name"] == "Căn hộ/Chung cư"].copy()
 n_raw = len(df)
-
+df = df[df["furnishing_status"] != "Không xác định"]
+df = df[df["price_vnd"] <= 20000000]
+#df = df[df["price_vnd"] >= 4000000]
 df["posted_date"] = pd.to_datetime(df["posted_date"], format="mixed")
 df = df[df["posted_date"].dt.year.isin(YEARS)].copy()
 n_year = len(df)
@@ -97,7 +99,7 @@ print(f"  Số phòng : {df.rooms.min():.0f} - {df.rooms.max():.0f}")
 #    -> CAT_MASK đánh dấu các cột phân loại (HGB sẽ xử lý native, không cần one-hot)
 # ----------------------------------------------------------------------------
 FURN_ORDER = ["Không nội thất", "Nội thất cơ bản", "Đầy đủ nội thất",
-              "Nội thất cao cấp", "Không xác định"]
+              "Nội thất cao cấp"]
 NUM_COLS = ["size_m2", "rooms", "dist_to_cbd", "dist_to_beach", "dist_to_nearest_uni",
             "has_balcony", "has_elevator", "has_window"]
 FURN_COL = ["furnishing_status"]
