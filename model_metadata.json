@@ -1,26 +1,77 @@
 {
-  "model": "Ridge",
+  "model": "ElasticNet",
   "best_params": {
-    "alpha": 56.23413251903491
+    "alpha": 0.003511191734215131,
+    "l1_ratio": 0.9
   },
-  "cv_r2_log": 0.47094183198418177,
-  "nested_cv_r2_log": 0.4832261496045148,
+  "cv_r2_log": 0.4869870703562872,
+  "nested_cv_r2_log": 0.4864266007509878,
+  "nested_cv": {
+    "n_outer_folds": 15,
+    "mean": {
+      "r2_log": 0.4864266007509878,
+      "rmse_log": 0.27831958258415807,
+      "r2_vnd": 0.47746417349637754,
+      "mae_vnd": 723018.3765909798,
+      "mape": 0.22849330950157884,
+      "median_ape": 0.17530275536656362,
+      "within20": 0.5562986553432412
+    },
+    "std": {
+      "r2_log": 0.05989899371712244,
+      "rmse_log": 0.016788163572598488,
+      "r2_vnd": 0.06367630227561394,
+      "mae_vnd": 43606.88154753009,
+      "mape": 0.016709123714872806,
+      "median_ape": 0.014459945283567515,
+      "within20": 0.034477867038124985
+    },
+    "plain_linear_mean": {
+      "r2_log": 0.47348081720219715,
+      "rmse_log": 0.2818331046109975,
+      "r2_vnd": 0.4677823065496251,
+      "mae_vnd": 732799.9082945187,
+      "mape": 0.23153067250176473,
+      "median_ape": 0.18026606055408456,
+      "within20": 0.5464668735369372
+    },
+    "median_baseline_mean": {
+      "r2_log": -0.009638032593359217,
+      "rmse_log": 0.39129567536363485,
+      "r2_vnd": -0.022239062944375047,
+      "mae_vnd": 1042863.710599379,
+      "mape": 0.3462950920694163,
+      "median_ape": 0.273966783156885,
+      "within20": 0.41259731068648264
+    },
+    "inner_vs_outer_r2_gap": -0.003528705596032718,
+    "model_selection_counts": {
+      "ElasticNet": 11,
+      "Lasso": 3,
+      "Ridge": 1
+    },
+    "paired_corrected_t": {
+      "diff_r2": 0.012945783548790776,
+      "t": 1.0474514529985604,
+      "p": 0.31263908438857224
+    }
+  },
   "holdout_test": {
-    "r2_log": 0.5123543242547854,
-    "mae_vnd": 713851.9055408357,
-    "median_ape": 0.18412497583310033,
-    "mape": 0.2377965970915368,
-    "within20": 0.53125
+    "r2_log": 0.4904339277329891,
+    "mae_vnd": 681190.0929203591,
+    "median_ape": 0.1710761401026698,
+    "mape": 0.21199882117702562,
+    "within20": 0.554140127388535
   },
-  "n_train_rows": 1119,
+  "n_train_rows": 782,
   "input_columns": [
     "size_m2",
     "dist_to_cbd",
     "dist_to_beach",
-    "dist_to_nearest_uni",
     "has_balcony",
     "has_elevator",
     "has_window",
+    "dist_to_nearest_uni",
     "furnishing_status",
     "ward_name",
     "nearest_beach_code",
@@ -67,7 +118,6 @@
     "DTU_NVL",
     "DUE",
     "DUT",
-    "FPTU",
     "SMP",
     "UDA",
     "UED",

@@ -10,19 +10,19 @@
     "max_leaf_nodes": 6,
     "min_samples_leaf": 5
   },
-  "cv_r2_log": 0.6443795200656164,
-  "nested_cv_r2_log": 0.6354574510700115,
+  "cv_r2_log": 0.6607733376295897,
+  "nested_cv_r2_log": 0.6472374853126309,
   "holdout_test": {
-    "r2_log": 0.6664989265838304,
-    "rmse_log": 0.2653867441441985,
-    "r2_vnd": 0.6754377412421586,
-    "mae_vnd": 2253172.516285778,
-    "rmse_vnd": 3173504.327431861,
-    "mape": 0.20400244396984016,
-    "median_ape": 0.1698800723334207,
-    "within20": 0.5787878787878787
+    "r2_log": 0.6191609228230062,
+    "rmse_log": 0.28407273663965704,
+    "r2_vnd": 0.574946314575386,
+    "mae_vnd": 2391596.7252243585,
+    "rmse_vnd": 3578844.9780840063,
+    "mape": 0.22315913013157349,
+    "median_ape": 0.1732364731565843,
+    "within20": 0.5555555555555556
   },
-  "n_train_rows": 1649,
+  "n_train_rows": 1798,
   "input_columns": [
     "size_m2",
     "rooms",
@@ -42,8 +42,7 @@
     "Không nội thất",
     "Nội thất cơ bản",
     "Đầy đủ nội thất",
-    "Nội thất cao cấp",
-    "Không xác định"
+    "Nội thất cao cấp"
   ],
   "ward_values": [
     "An Hải",
@@ -92,18 +91,18 @@
     "VNUK"
   ],
   "permutation_importance": {
-    "size_m2": 0.6444510447081767,
-    "dist_to_cbd": 0.1187057854323605,
-    "furnishing_status": 0.05162599576111948,
-    "nearest_uni_code": 0.049231326722700156,
-    "ward_name": 0.04515516194004588,
-    "rooms": 0.03657044429427508,
-    "dist_to_nearest_uni": 0.03484128197511416,
-    "dist_to_beach": 0.026778366671160025,
-    "nearest_beach_code": 0.008930696734837661,
-    "has_window": 0.007462956219000056,
-    "has_balcony": 0.001954355718992906,
-    "has_elevator": -0.0008127131586283754
+    "size_m2": 0.6149542761257925,
+    "dist_to_cbd": 0.09074756207729202,
+    "nearest_uni_code": 0.04750982734144176,
+    "dist_to_beach": 0.039310080228559946,
+    "furnishing_status": 0.03274845356142544,
+    "rooms": 0.03217906624161999,
+    "ward_name": 0.031363949707563746,
+    "dist_to_nearest_uni": 0.02679773479742793,
+    "nearest_beach_code": 0.022449202671081147,
+    "has_balcony": 0.015099972226319374,
+    "has_window": 0.004617744941653457,
+    "has_elevator": 0.003303019726196782
   },
   "output": "Giá thuê dự đoán (VND/tháng)",
   "versions": {
